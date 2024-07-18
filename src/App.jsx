@@ -3,11 +3,11 @@ import { useRef } from 'react'
 import { useState } from 'react'
 import { BottomSheet } from 'react-spring-bottom-sheet'
 import React from 'react';
-import titleImage from './Title.JPG';
-import thanksImage from './thanks.gif';
-import posterImage from './poster.png';
-import submitImage from './당장매수해.png';
-import howToBuyImage from './howtobuy.png';
+import titleImage from './img/Title.JPG';
+import thanksImage from './img/thanks.gif';
+import posterImage from './img/poster.png';
+import submitImage from './img/당장매수해.png';
+import howToBuyImage from './img/howtobuy.png';
 
 import './bottomSheet.css'
 
@@ -206,7 +206,7 @@ export default function App() {
           </form>
         </BottomSheet>
           <div className={`modal ${isModalVisible ? 'visible' : 'hidden'}`}>
-            <img className={`image ${isModalVisible ? 'visible' : 'hidden'}`} src={thanksImage} />
+            <img className={`modal-image ${isModalVisible ? 'visible' : 'hidden'}`} src={thanksImage} />
             <p>시간 내주셔서 감사합니다!!</p>
             <button className="button" onClick={closeModal}>닫기</button>
           </div>
