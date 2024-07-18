@@ -160,7 +160,7 @@ body {
 }
 
 
-h2 {
+h1 {
   font-size: 24px;
   font-weight: 700;
   padding: 24px;
@@ -172,11 +172,16 @@ a {
 }
 
 p {
+  color: #555555;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   padding: 4vw;
   line-height: 130%;
   max-width: 420px;
+}
+strong {
+  color: black;
+  font-weight: 700;
 }
 
 .thanks {
@@ -214,7 +219,7 @@ p {
   max-height: 80vh;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.75);
+  transform: translate(-50%, -50%) scale(0);
   padding: 20px;
   background-color: white;
   border: none;
@@ -248,7 +253,7 @@ p {
   /* max-width: 50vw; */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.75);
+  transform: translate(-50%, -50%) scale(0);
   padding: 25px;
   background-color: white;
   border: none;
