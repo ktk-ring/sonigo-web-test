@@ -1,9 +1,9 @@
 import './App.css';
-import { useRef } from 'react'
 import { useState } from 'react'
 import { BottomSheet } from 'react-spring-bottom-sheet'
 import React from 'react';
 import titleImage from './img/Title.JPG';
+import chartPlaceholder from './img/chartPlaceholder.jpeg';
 import thanksImage from './img/thanks.gif';
 import posterImage from './img/poster.png';
 import submitImage from './img/당장매수해.png';
@@ -67,31 +67,23 @@ export default function App() {
   return (
     <>
       <body className="App-header">
-        <img src={titleImage} className="image" />
-        <h2>사진 기부하고 손이고를 돕자!!</h2>
-        <div className="graph">
-          [그래프]<br />
-          []
-          <ol>
-            <button className="button">1일</button>
-            <button className="button">3일</button>
-            <button className="button">1주</button>
-            <button className="button">1년</button>
-            <button className="button">5년</button>
-          </ol>
-        </div>
+        <img className="image" src={titleImage} alt="" />
+        <img className="image" src={chartPlaceholder} alt=""></img>
+        <p style={{ fontSize: "24px", margin: "36px 0 12px", padding: "0" }}>
+          <strong>사진 기부</strong>하고 <strong>손.이.고.</strong> 를 돕자!!
+        </p>
         <p>
           안녕하세요 사랑하는 팔로워님들<br />
-          손이고임미다.
+          <strong>손.이.고.</strong>임미다.
           <br /><br />
-          일반 머리를 위한 사진을 모으기 위해 이 웹싸이트를 만들었습니다. 사람들이 미용실에 갈 때 확실한 예시를 만들어 주고 싶거든요.
+          <strong>일반 머리를 위한 사진을 모으기 위해</strong> 이 웹싸이트를 만들었습니다. 사람들이 미용실에 갈 때 확실한 예시를 만들어 주고 싶거든요.
           <br /><br />
           물논 지금 DM으로 여러분의 머리를 받고 잇찌만,,,!!!
           그게 여의치 않은 상황입니다,,,,,,,,,
           <br /><br />
           그래서 열씸이 코딩을 배워서 웹싸이트를 만들었읍니다…
           <br /><br />
-          쨋든 이뿌고, 근사하고, 뽀대나는 머리 사진 많이 보내주시면 감사티비 하도록 하겠습니다. 사진 보내주면 손이고를 저점매수도 하고 이뿐 사진도 보내고!! 1석 2조 짱이죠~~~!!!!
+          쨋든 <strong>이뿌고, 근사하고, 뽀대나는 머리 사진 많이 보내주시면 감사티비</strong> 하도록 하겠습니다. 사진 보내주면 손이고를 저점매수도 하고 이뿐 사진도 보내고!! 1석 2조 짱이죠~~~!!!!
           <br /><br />
           정말정말 감사합니다 사랑해요 아이러브유언제나건강하세요하트뿅뿅뽀뽀쪽
         </p>
@@ -113,18 +105,18 @@ export default function App() {
           onClick={(e) => {
             e.preventDefault();
             if (openBottomSheet) {
-              // if (instagramID === '') {
-              //   alert('인스타그램 아이디를 입력해주세요!');
-              //   return;
-              // }
-              // if (images.length === 0) {
-              //   alert('사진을 업로드해주세요!');
-              //   return;
-              // }
-              // if (text === '') {
-              //   alert('메시지를 입력해주세요!');
-              //   return;
-              // }
+              if (instagramID === '') {
+                alert('인스타그램 아이디를 입력해주세요!');
+                return;
+              }
+              if (images.length === 0) {
+                alert('사진을 업로드해주세요!');
+                return;
+              }
+              if (text === '') {
+                alert('메시지를 입력해주세요!');
+                return;
+              }
               handleSubmit(e);  // 폼 제출
               setOpenBottomSheet(false);
             } else {
@@ -206,7 +198,9 @@ export default function App() {
           </form>
         </BottomSheet>
           <div className={`modal ${isModalVisible ? 'visible' : 'hidden'}`}>
-            <img className={`modal-image ${isModalVisible ? 'visible' : 'hidden'}`} src={thanksImage} />
+            <img className={`modal-image ${isModalVisible ? 'visible' : 'hidden'}`}
+              src={thanksImage} alt=""
+            />
             <p>시간 내주셔서 감사합니다!!</p>
             <button className="button" onClick={closeModal}>닫기</button>
           </div>
