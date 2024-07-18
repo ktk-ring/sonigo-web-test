@@ -1,38 +1,395 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'ChosunCentennial';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family:
+    Pretendard,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: normal;
+  width: 100%;
+}
+
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 24px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 4vw;
+  line-height: 130%;
+  max-width: 420px;
+}
+
+.thanks {
+  width: 50%;
+  max-width: 270px;
+  margin-top: -8vh;
+  margin-bottom: 50px;
+  border: none;
+  /* background-color: none; */
+  border-radius: 5%;
+  padding: 0;
+  transition: 0.15s ease-in-out;
+}
+
+.thanks img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 5%;
+}
+
+.thanks:active {
+  filter: brightness(0.7);
+}
+
+/* styles.css */
+.modal {
+  font-weight: 700;
+  text-align: center;
+  position: fixed;
+  font-size: 24px;
+  max-width: 70vw;
+  max-height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.75);
+  padding: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal p {
+  font-weight: 700;
+  padding: 1em;
+}
+
+.modal button {
+  font-size: 18px;
+}
+
+.hidden-modal {
+  font-family: 'ChosunCentennial';
+  text-align: center;
+  position: fixed;
+  font-size: 24px;
+  /* max-width: 50vw; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.75);
+  padding: 25px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.hidden-modal.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.button {
+  background-color: #ffffff00;
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 1000px;
+  border-style: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.image {
+  width: 100%;
+  transition: all 1s ease;
+}
+
+.image.visible {
+  transform: scale(1);
+}
+.image.hidden {
+  transform: scale(0);
+}
+
+.submit {
+  position: fixed;
+  display: fixed;
+  bottom: 0;
+  border-radius: 0;
+  z-index: 1000000;
+}
+
+.submit-image {
+  width: 70vw;
+  max-width: 270px;
+}
+
+.button:hover {
+  filter: brightness(0.9);
+}
+
+.button:active {
+  filter: brightness(0.7);
+}
+
+
+.form {
+  font-family:
+    Pretendard,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  text-align: left;
+}
+
+.form h1 {
+  margin-bottom: 30px;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.form form {
+  margin-left: 5vw;
+  font-size: 18px;
+}
+.input-container {
+  position: relative;
+}
+.decorative-text {
+  position: absolute;
+  margin: 1.2em;
+  top: 30px;
+  font-size: 16px;
+  z-index: 1;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form .input {
+  width: calc(90vw - 2em);
+  padding: 15px 1em;
+  margin: 15px 0 40px 0;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.form .input:active {
+  filter: brightness(0.9);
+}
+
+.form input[type=‘file’] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+.form .has-images {
+  width: calc(90vw - 2em);
+  padding: 15px 1em;
+  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 15px;
+}
+
+.form .preview-image {
+  margin: 5px;
+  max-width: 30vw;
+  max-height: 20vh;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
